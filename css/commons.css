@@ -1,0 +1,11 @@
+input, button {
+  padding: 0;
+  border: none;
+  outline: none;
+}
+button {
+  cursor: pointer;
+}
+button:not(:first-of-type) {
+  margin-left: .5em;
+}

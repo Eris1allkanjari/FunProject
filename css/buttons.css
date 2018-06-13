@@ -1,0 +1,12 @@
+.fab {
+  color: white;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100vw;
+  background-color: var(--accent-color);
+}
+.fab.stretched {
+  width: auto;
+  height: auto;
+  padding: .75em 2.25em;
+}
