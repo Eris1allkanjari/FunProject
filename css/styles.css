@@ -1,8 +1,48 @@
 html, body {
   margin: 0;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
   box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* Variables */
+  --header-height: 56px;
+  --footer-height: 48px;
   --accent-color: #3f51b5;
+  --text-color: #656565;
+}
+header, footer {
+  height: var(--header-height);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center; /* Vertical Align */
+  justify-content: space-between; /* Horizontal Align, children push each-other */
+}
+header .title, footer .title {
+  color: var(--text-color);
+  font-size: 18pt;
+  font-weight: bold;
+  text-decoration: unset;
+}
+main {
+  flex: 1;
+}
+footer {
+  height: var(--footer-height); /* Overriding previous applied value (in "header, footer" selector above) */
+}
+footer .title {
+  font-size: unset;
+}
+footer .links {
+  display: flex;
+}
+footer .links li a {
+  color: var(--text-color);
+  text-decoration: unset;
+  font-weight: bold;
+}
+footer .links li:not(:first-child) {
+  margin-left: .5em;
 }
 .buttons-bar {
   display: flex;
