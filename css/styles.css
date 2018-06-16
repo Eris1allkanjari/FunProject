@@ -1,15 +1,18 @@
 html, body {
+  /* Variables */
+  --header-height: 56px;
+  --footer-height: 48px;
+  --accent-color: #3f51b5;
+  --success-color: #4caf50;
+  --danger-color: #f44336;
+  --text-color: #656565;
   margin: 0;
   height: 100vh;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  color: var(--text-color);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  /* Variables */
-  --header-height: 56px;
-  --footer-height: 48px;
-  --accent-color: #3f51b5;
-  --text-color: #656565;
 }
 header, footer {
   height: var(--header-height);
@@ -26,6 +29,9 @@ header .title, footer .title {
 }
 main {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
 }
 footer {
   height: var(--footer-height); /* Overriding previous applied value (in "header, footer" selector above) */
@@ -33,18 +39,71 @@ footer {
 footer .title {
   font-size: unset;
 }
-footer .links {
-  display: flex;
-}
-footer .links li a {
+footer .links a {
   color: var(--text-color);
-  text-decoration: unset;
   font-weight: bold;
 }
 footer .links li:not(:first-child) {
   margin-left: .5em;
 }
 .buttons-bar {
+  border-radius: 100vw;
+}
+.buttons-bar, .comments-container {
+  padding: 1em;
+  max-width: 50vw; /* To be changed for mobiles to "unset" */
+  margin: 1rem auto;
+}
+.comments-container, .comment, .new-comment textarea {
+  border-radius: 4px;
+}
+.comment, .new-comment textarea {
+  margin-bottom: 1rem;
+}
+.comment {
   display: flex;
-  justify-content: center;
+  padding: .25em .75em;
+}
+.comment-details {
+  display: flex;
+  flex-direction: column;
+  text-align: end;
+  margin-right: .75rem;
+}
+.comment hr {
+  border-style: dotted;
+  border-color: #aaa;
+}
+.comment-content {
+  margin-left: .75rem;
+  word-break: break-word;
+}
+.new-comment {
+  display: flex;
+  flex-direction: column;
+}
+.new-comment textarea {
+  border: none;
+  transition: .3s ease;
+  border-bottom: 2px solid var(--accent-color);
+}
+.new-comment label {
+  order: -1; /* Change the order with textarea */
+  color: var(--accent-color);
+}
+.new-comment .fab {
+  margin-left: auto;
+}
+/* New comment textarea states */
+.new-comment textarea:invalid {
+  border-bottom-color: var(--danger-color);
+}
+.new-comment textarea:invalid ~ label {
+  color: var(--danger-color);
+}
+.new-comment textarea:not([value=""]):valid {
+  border-bottom-color: var(--success-color);
+}
+.new-comment textarea:not([value=""]):valid ~ label {
+  color: var(--success-color);
 }

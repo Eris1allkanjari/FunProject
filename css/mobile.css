@@ -1,3 +1,5 @@
 @media (max-width: 768px) {
-  
+  .buttons-bar, .comments-container {
+    max-width: unset;
+  }
 }
