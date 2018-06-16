@@ -10,3 +10,10 @@
   height: auto;
   padding: .75em 2.25em;
 }
+
+.contact {
+  border-radius: 9999px;
+  background-color: black;
+  color: white;
+  padding: 10px;
+}
