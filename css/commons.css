@@ -3,6 +3,12 @@ input, button {
   border: none;
   outline: none;
 }
+textarea {
+  outline: none;
+  padding: .5em 1em;
+  resize: none;
+  overflow: hidden;
+}
 button {
   cursor: pointer;
 }
@@ -10,7 +16,9 @@ button:not(:first-of-type) {
   margin-left: .5em;
 }
 ul {
+  list-style-type: none;
+}
+h1, h2, h3, h4, h5, h6, p, ul {
   margin: 0;
   padding: 0;
-  list-style-type: none;
 }
